@@ -1,0 +1,12 @@
+<odoo>
+    <record id="view_account_move_form_with_sale_order_link" model="ir.ui.view">
+        <field name="name">account.move.form.sale.order.link</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="invoice_date" position="after">
+                <field name="sale_order_id" widget="many2one" options="{'no_create': True}" context="{'default_name': invoice_origin}" string="Sale Order"/>
+            </field>
+        </field>
+    </record>
+</odoo>
