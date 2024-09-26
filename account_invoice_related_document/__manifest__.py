@@ -1,9 +1,9 @@
 # __manifest__.py
 {
-    'name': 'Account Move Sale Order Link',
-    'version': '1.0',
+    'name': 'Account Move Related document Link',
+    'version': '15.0.2',
     'category': 'Accounting',
-    'summary': 'Add a link from Account Move to Sale Order',
+    'summary': 'Add a link from Account Move to Related Document',
     'author': 'zvERP',
     'license': 'AGPL-3',
     'website': 'https://www.zverp.com',
