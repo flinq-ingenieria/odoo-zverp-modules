@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* extended_timesheet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-13 23:30+0000\n"
+"PO-Revision-Date: 2024-10-13 23:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: extended_timesheet
+#: model:ir.model,name:extended_timesheet.model_account_analytic_line
+msgid "Analytic Line"
+msgstr ""
+
+#. module: extended_timesheet
+#: model:ir.model.fields,field_description:extended_timesheet.field_account_analytic_line__kilometros
+msgid "Kilometres"
+msgstr ""
+
+#. module: extended_timesheet
+#: model:ir.model.fields,field_description:extended_timesheet.field_account_analytic_line__servicio_campo
+msgid "Lunches"
+msgstr ""
+
+#. module: extended_timesheet
+#: model:ir.model.fields,field_description:extended_timesheet.field_account_analytic_line__lugar
+msgid "Mission place"
+msgstr ""
+
+#. module: extended_timesheet
+#: model:ir.model.fields,field_description:extended_timesheet.field_account_analytic_line__coche_personal
+msgid "Personal car?"
+msgstr ""
+
+#. module: extended_timesheet
+#: model_terms:ir.ui.view,arch_db:extended_timesheet.hr_timesheet_sheet_welding
+msgid "total"
+msgstr ""
