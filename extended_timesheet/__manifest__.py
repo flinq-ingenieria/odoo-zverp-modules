@@ -2,9 +2,9 @@
 {
     'name': "extended_timesheet",
 
-    'summary': """Partes personalizados para Welding Solutions""",
+    'summary': """Partes personalizados""",
 
-    'description': """Partes personalizados para Welding Solutions""",
+    'description': """Partes personalizados""",
 
     'author': "zvERP",
     'website': "http://www.zverp.com",
