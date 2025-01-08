@@ -4,7 +4,7 @@ class Matricula(models.Model):
     _name = 'res.partner.matricula'
     _description = 'Matrícula'
 
-    name = fields.Char(string='Matrícula', required=True)
+    name = fields.Char(string='Matrícula', required=False)
     partner_id = fields.Many2one('res.partner', string='Propietario', ondelete='cascade')
 
 
@@ -19,20 +19,26 @@ class ResPartner(models.Model):
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    matricula_id = fields.Many2one('res.partner.matricula', string='Matrícula')
+    matricula_id = fields.Many2one('res.partner.matricula', string='Matrícula', compute='_compute_matricula_id', store=True, readonly=False)
 
-    @api.onchange('partner_id')
-    def _onchange_partner_id(self):
-        if self.partner_id and self.partner_id.matricula_ids:
-            self.matricula_id = self.partner_id.matricula_ids[0]
+    @api.depends('partner_id', 'partner_id.matricula_ids')
+    def _compute_matricula_id(self):
+        for record in self:
+            if record.partner_id and len(record.partner_id.matricula_ids) == 1:
+                record.matricula_id = record.partner_id.matricula_ids[0]
+            elif not record.partner_id:
+                record.matricula_id = False
 
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    matricula_id = fields.Many2one('res.partner.matricula', string='Matrícula')
+    matricula_id = fields.Many2one('res.partner.matricula', string='Matrícula', compute='_compute_matricula_id', store=True, readonly=False)
 
-    @api.onchange('partner_id')
-    def _onchange_partner_id(self):
-        if self.partner_id and self.partner_id.matricula_ids:
-            self.matricula_id = self.partner_id.matricula_ids[0]
+    @api.depends('partner_id', 'partner_id.matricula_ids')
+    def _compute_matricula_id(self):
+        for record in self:
+            if record.partner_id and len(record.partner_id.matricula_ids) == 1:
+                record.matricula_id = record.partner_id.matricula_ids[0]
+            elif not record.partner_id:
+                record.matricula_id = False
