@@ -1,0 +1,72 @@
+<odoo>
+    <!-- Extend res.partner form view to add Matrículas with many2many_tags -->
+    <record id="view_partner_form_inherit_matricula" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.matricula</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="matricula_ids" widget="many2many_tags" options="{'no_create_edit': True, 'limit': 0}" string="Matrículas"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Extend account.move form view to add Matrícula Many2one field with domain -->
+    <record id="view_move_form_inherit_matricula" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.matricula</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="matricula_id" placeholder="Seleccionar Matrícula" domain="[('partner_id', '=', partner_id)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Extend sale.order form view to add Matrícula Many2one field with domain -->
+    <record id="view_sale_order_form_inherit_matricula" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.matricula</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="matricula_id" placeholder="Seleccionar Matrícula" domain="[('partner_id', '=', partner_id)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add Matrícula field to the search view of account.move -->
+    <record id="view_invoice_search_inherit_matricula" model="ir.ui.view">
+        <field name="name">account.move.search.inherit.matricula</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+ <field name="arch" type="xml">
+         <search>
+         <field name="matricula_id"/>
+         </search>
+ </field>
+    </record>
+
+    <!-- Add Matrícula field to the search view of sale.order -->
+    <record id="view_sale_order_search_inherit_matricula" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.matricula</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+ <field name="arch" type="xml">
+         <search>
+         <field name="matricula_id"/>
+         </search>
+ </field>
+    </record>
+
+    <!-- Add Matrícula field to the report template of invoices -->
+    <template id="report_invoice_document_inherit_matricula" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='informations']" position="inside">
+            <t t-if="o.matricula_id">
+                <div>
+                    <strong>Matrícula:</strong> <p class="m-0" t-esc="o.matricula_id.name"/>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
