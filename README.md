@@ -35,3 +35,11 @@ This repository contains various Odoo modules that enhance functionality in diff
 ### `sale_order_salesperson`
 **EN:** Adds the salesperson's phone number next to the 'Salesperson' field in quotations.  
 **ES:** Permite añadir el número de teléfono del comercial junto al campo 'comercial' en los presupuestos.
+
+### `rectificativa_negativo`
+**EN:** Prints corrective invoices with negative values.  
+**ES:** Imprime las facturas rectificativas con valores negativos.
+
+### `partner_matriculas`
+**EN:** Allows associating multiple license plates with contacts, quotations, and invoices.  
+**ES:** Permite asociar múltiples matrículas a contactos, presupuestos y facturas.
