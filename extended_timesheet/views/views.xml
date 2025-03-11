@@ -8,6 +8,7 @@
 <field name="arch" type="xml">
      <field name="name" position="after">
 	<field name="coche_personal"/>
+	<field name="facturable"/>
 	<field name="kilometros" sum="total"/>
 	<field name="lugar"/>
 	<field name="servicio_campo" sum="total"/>
