@@ -1,6 +1,6 @@
 # odoo-zverp-modules Repository
 
-This repository contains various Odoo modules that enhance functionality in different areas such as invoicing, contact management, sales, and accounting. T
+This repository contains various Odoo modules that enhance functionality in different areas such as invoicing, contact management, sales, and accounting. TT
 
 ## Modules
 
