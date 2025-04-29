@@ -18,11 +18,10 @@ class ResPartner(models.Model):
                 partner.seniority_years = 0
 
     @api.model
-    def create(self, vals_list):
-        for vals in vals_list:
-            if 'seniority_date' not in vals:
-                vals['seniority_date'] = date.today()
-        return super(ResPartner, self).create(vals_list)
+    def create(self, vals):
+        if 'seniority_date' not in vals:
+            vals['seniority_date'] = date.today()
+        return super(ResPartner, self).create(vals)
 
     def write(self, vals):
         if 'seniority_date' not in vals:
