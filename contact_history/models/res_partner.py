@@ -22,8 +22,3 @@ class ResPartner(models.Model):
         if 'seniority_date' not in vals:
             vals['seniority_date'] = date.today()
         return super(ResPartner, self).create(vals)
-
-    def write(self, vals):
-        if 'seniority_date' not in vals:
-            vals['seniority_date'] = self.seniority_date
-        return super(ResPartner, self).write(vals)
