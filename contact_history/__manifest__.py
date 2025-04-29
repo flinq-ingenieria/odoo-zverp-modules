@@ -1,6 +1,6 @@
 {
     'name': 'Contact Seniority',
-    'version': '16.0',
+    'version': '16.0.1',
     'summary': 'Add seniority field to contacts',
     'description': 'Stores the seniority of a contact based on the creation date.',
     'author': 'zvERP',
