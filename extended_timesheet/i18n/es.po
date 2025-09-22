@@ -47,6 +47,13 @@ msgid "Personal car?"
 msgstr "¿Coche personal?"
 
 #. module: extended_timesheet
+#: model:ir.model.fields,field_description:extended_timesheet.field_account_analytic_line__facturable
+#, fuzzy
+msgid "Billable?"
+msgstr "¿Facturable?"
+
+
+#. module: extended_timesheet
 #: model_terms:ir.ui.view,arch_db:extended_timesheet.hr_timesheet_sheet_welding
 #, fuzzy
 msgid "total"
