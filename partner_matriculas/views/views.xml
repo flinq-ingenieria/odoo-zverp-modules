@@ -75,7 +75,7 @@
     <template id="report_invoice_document_inherit_matricula" inherit_id="account.report_invoice_document">
         <xpath expr="//div[@id='informations']" position="inside">
             <t t-if="o.matricula_id">
-                <div>
+                <div class="col-auto col-3 mw-100 mb-2">
                     <strong>Matrícula:</strong> <p class="m-0" t-esc="o.matricula_id.name"/>
                 </div>
             </t>
@@ -85,7 +85,7 @@
 <template id="report_sale_order_document_inherit_matricula" inherit_id="sale.report_saleorder_document">
     <xpath expr="//div[@id='informations']" position="inside">
         <t t-if="doc.matricula_id">
-            <div>
+            <div  class="col-auto col-3 mw-100 mb-2">
                 <strong>Matrícula:</strong> <p class="m-0" t-esc="doc.matricula_id.name"/>
             </div>
         </t>
