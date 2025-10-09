@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Extend res.partner form view to add the Matrícula field -->
+    <record id="view_partner_form_inherit_matricula" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.matricula</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="matricula" placeholder="Matrícula"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Extend account.move form view to add the Matrícula field -->
+    <record id="view_move_form_inherit_matricula" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.matricula</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="matricula" placeholder="Matrícula"/>
+            </xpath>
+        </field>
+    </record>
+
+<!-- Inherit the report template to add Matrícula --> 
+    <template id="report_invoice_document_inherit_matricula" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='informations']" position="inside">
+            <t t-if="o.matricula">
+                <div>
+                    <strong>Matrícula:</strong> <p class="m-0" t-esc="o.matricula"/>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <record id="view_invoice_search_inherit_matricula" model="ir.ui.view">
+        <field name="name">account.move.search.inherit.matricula</field>
+        <field name="model">account.move</field>
+	<field name="inherit_id" ref="account.view_account_invoice_filter"/>
+ <field name="arch" type="xml">
+	 <search>
+         <field name="matricula"/>
+         </search>
+ </field>
+    </record>
+
+</odoo>
